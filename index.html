@@ -73,6 +73,7 @@ This very simple function can be called and will display inline an expandable tr
         font-family: Georgia;
         font-size: 12px;
         letter-spacing: 1px;	line-height: 1.5;
+		background-color: #ABC1DF;
       }
 
         .php-array-tree A {
@@ -95,13 +96,15 @@ This very simple function can be called and will display inline an expandable tr
         .php-array-tree .pft-array {
           color: #4F15A7;
           font-weight: bold;
-          text-decoration: none;        
+          text-decoration: none; 
+			cursor: pointer; cursor: hand; 
         }
         
         .php-array-tree .pft-array  .pft-value{
           color: #000000;
           font-weight: normal;
-          text-decoration: none;        
+          text-decoration: none;  
+	   	cursor: auto;      
         }
 		</style>
 
@@ -113,7 +116,7 @@ This very simple function can be called and will display inline an expandable tr
         $(".php-array-tree").find("UL").hide();
 
         // Expand/collapse on click
-        $(".pft-array A").click( function() {
+        $(".pft-array span").click( function() {
           $(this).parent().find("UL:first").slideToggle("medium");
           if( $(this).parent().attr("className") == "pft-array" ) return false;
         });
@@ -123,18 +126,18 @@ This very simple function can be called and will display inline an expandable tr
 		</script>
   
 <ul class="php-array-tree">
-<li ><a href="#" class="pft-value">0=Value1</a></li>
-<li ><a href="#" class="pft-value">Item2=Value2</a></li>
-<li class="pft-array"><a href="#">Item3 (Click to Open)</a>
+<li ><span href="#" class="pft-value">0=Value1</span></li>
+<li ><span href="#" class="pft-value">Item2=Value2</span></li>
+<li class="pft-array"><span href="#">Item3 (Click to Open)</span>
 <ul>
-<li ><a href="#" class="pft-value">0=Item4</a></li>
-<li ><a href="#" class="pft-value">Item5=Some Text value</a></li>
-<li ><a href="#" class="pft-value">Item6=&lt;a href='http://example.com&gt;A Link&lt;/a&gt; inside some HTML but it gets show just as is.'</a></li>
-<li class="pft-array"><a href="#">Item7 (Click to Open)</a>
+<li ><span href="#" class="pft-value">0=Item4</span></li>
+<li ><span href="#" class="pft-value">Item5=Some Text value</span></li>
+<li ><span href="#" class="pft-value">Item6=&lt;a href='http://example.com&gt;A Link&lt;/a&gt; inside some HTML but it gets show just as is.'</span></li>
+<li class="pft-array"><span href="#">Item7 (Click to Open)</span>
 <ul>
-<li ><a href="#" class="pft-value">0=A Further Item</a></li>
-<li ><a href="#" class="pft-value">1=Another Item</a></li>
-<li ><a href="#" class="pft-value">2=Must Keep Going</a></li>
+<li ><span href="#" class="pft-value">0=A Further Item</span></li>
+<li ><span href="#" class="pft-value">1=Another Item</span></li>
+<li ><span href="#" class="pft-value">2=Must Keep Going</span></li>
 </ul>
 </li>
 </ul>
