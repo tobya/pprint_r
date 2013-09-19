@@ -62,7 +62,87 @@ This very simple function can be called and will display inline an expandable tr
 <pre><code>pprint_r($MyArray,'Execution ended by pprint_r');
 </code></pre>
 
-<p><a href="demopage.html">Demo</a></p>
+<p><h1><a href="demopage.html">Demo</a></h1></p>
+
+
+
+	<!-- Makes the file tree(s) expand/collapsae dynamically -->
+		<style type="text/css">
+
+      .php-array-tree {
+        font-family: Georgia;
+        font-size: 12px;
+        letter-spacing: 1px;	line-height: 1.5;
+      }
+
+        .php-array-tree A {
+          color: #000000;
+          text-decoration: none;
+        }
+
+        .php-array-tree A:hover {
+          color: #666666;
+        }
+
+        .php-array-tree .open {
+          font-style: italic;
+        }
+
+        .php-array-tree .closed {
+          font-style: normal;
+        }
+        
+        .php-array-tree .pft-array {
+          color: #4F15A7;
+          font-weight: bold;
+          text-decoration: none;        
+        }
+        
+        .php-array-tree .pft-array  .pft-value{
+          color: #000000;
+          font-weight: normal;
+          text-decoration: none;        
+        }
+		</style>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script  type="text/javascript">
+		$(document).ready( function() {
+
+        // Hide all subfolders at startup
+        $(".php-array-tree").find("UL").hide();
+
+        // Expand/collapse on click
+        $(".pft-array A").click( function() {
+          $(this).parent().find("UL:first").slideToggle("medium");
+          if( $(this).parent().attr("className") == "pft-array" ) return false;
+        });
+
+      });
+
+		</script>
+  
+<ul class="php-array-tree">
+<li ><a href="#" class="pft-value">0=Value1</a></li>
+<li ><a href="#" class="pft-value">Item2=Value2</a></li>
+<li class="pft-array"><a href="#">Item3 (Click to Open)</a>
+<ul>
+<li ><a href="#" class="pft-value">0=Item4</a></li>
+<li ><a href="#" class="pft-value">Item5=Some Text value</a></li>
+<li ><a href="#" class="pft-value">Item6=&lt;a href='http://example.com&gt;A Link&lt;/a&gt; inside some HTML but it gets show just as is.'</a></li>
+<li class="pft-array"><a href="#">Item7 (Click to Open)</a>
+<ul>
+<li ><a href="#" class="pft-value">0=A Further Item</a></li>
+<li ><a href="#" class="pft-value">1=Another Item</a></li>
+<li ><a href="#" class="pft-value">2=Must Keep Going</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><P>The page continues after the call
+
+
+
       </section>
 
     </div>
