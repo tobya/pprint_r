@@ -127,26 +127,26 @@ function php_tree_array($MArray, $return_link, $extensions = array(), $first_cal
 	$html_array_tree = '';
 
 
-		$html_array_tree = "<ul";
+		$html_array_tree = "\n<ul";
 		if( $first_call ) { $html_array_tree .= " class=\"php-array-tree\""; $first_call = false; }
 		$html_array_tree .= ">";
 		foreach( $MArray as $KeyValue => $this_value) {
 
 				if( is_array($this_value) ) {
 					// Directory
-					$html_array_tree .= "<li class=\"pft-array\"><a href=\"#\">" . htmlspecialchars($KeyValue) . "</a>";
+					$html_array_tree .= "\n<li class=\"pft-array\"><a href=\"#\">" . htmlspecialchars($KeyValue) . "</a>";
 					$html_array_tree .= php_tree_array($this_value, $return_link ,$extensions, false);
-					$html_array_tree .= "</li>";
+					$html_array_tree .= "\n</li>";
 				} else {
 					// File
 					// Get extension (prepend 'ext-' to prevent invalid classes from extensions that begin with numbers)
 					$ext = "ext-mine"; 
 					$link = '#';
-					$html_array_tree .= "<li ><a href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</a></li>";
+					$html_array_tree .= "\n<li ><a href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</a></li>";
 				}
 			
 		}
-		$html_array_tree .= "</ul>";
+		$html_array_tree .= "\n</ul>";
 
 	return $html_array_tree;
 }
