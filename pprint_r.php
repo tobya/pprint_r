@@ -25,7 +25,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEAL
  * @param bool $ShouldExit
  *
  */
-function pprint_r($Array, $ShouldExit = false){
+function pprint_r($Array, $Options = false){
 
    $prehtml = '
 	<!-- Makes the file tree(s) expand/collapsae dynamically -->
@@ -52,6 +52,18 @@ function pprint_r($Array, $ShouldExit = false){
 
         .php-array-tree .closed {
           font-style: normal;
+        }
+        
+        .php-array-tree .pft-array {
+          color: #4F15A7;
+          font-weight: bold;
+          text-decoration: none;        
+        }
+        
+        .php-array-tree .pft-array  .pft-value{
+          color: #000000;
+          font-weight: normal;
+          text-decoration: none;        
         }
 		</style>
 
@@ -89,9 +101,24 @@ function pprint_r($Array, $ShouldExit = false){
       echo php_tree_array($Array, '');
 
 
-if ($ShouldExit){
-	exit;
+
+switch (getType($Options))
+{
+  case 'array':
+  //Some code to deal with options.
+  break;
+  case  'string' : //display text and exit
+  
+  die($Options);
+  
+  break;
+  case  'boolean' : //ShouldExit
+  if ($Options == true){
+	  exit;
+	}
+	break;
 }
+
 
 }
 
@@ -115,7 +142,7 @@ function php_tree_array($MArray, $return_link, $extensions = array(), $first_cal
 					// Get extension (prepend 'ext-' to prevent invalid classes from extensions that begin with numbers)
 					$ext = "ext-mine"; 
 					$link = '#';
-					$html_array_tree .= "<li ><a href=\"$link\">$KeyValue=" . htmlspecialchars($this_value) . "</a></li>";
+					$html_array_tree .= "<li ><a href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</a></li>";
 				}
 			
 		}
