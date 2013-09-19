@@ -1,6 +1,9 @@
-<h1>Show Array</h1>
+<h1>Show Array and Exit</h1>
 
 <?php
+
+
+
 
   include('../pprint_r.php');
 
@@ -10,6 +13,6 @@
                       'Item6' => "<a href='http://example.com>A Link</a> inside some HTML but it gets show just as is.'",
                       'Item7 (Click to Open)' => array('A Further Item', 'Another Item', 'Must Keep Going')));
 
-  pprint_R($ShowArray);
-  
-  echo '<P>The page continues after the call';
+  pprint_R($ShowArray,true);
+
+  echo 'This statement wont be shown';
