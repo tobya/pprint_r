@@ -35,6 +35,7 @@ function pprint_r($Array, $Options = false){
         font-family: Georgia;
         font-size: 12px;
         letter-spacing: 1px;	line-height: 1.5;
+		background-color: #ABC1DF;
       }
 
         .php-array-tree A {
@@ -57,13 +58,15 @@ function pprint_r($Array, $Options = false){
         .php-array-tree .pft-array {
           color: #4F15A7;
           font-weight: bold;
-          text-decoration: none;        
+          text-decoration: none; 
+			    cursor: pointer; cursor: hand; //Turn into hand.
         }
         
         .php-array-tree .pft-array  .pft-value{
           color: #000000;
           font-weight: normal;
-          text-decoration: none;        
+          text-decoration: none;  
+	   	    cursor: auto;      //default cursor.
         }
 		</style>
 
@@ -84,21 +87,9 @@ function pprint_r($Array, $Options = false){
 
 		</script>
   ';
-	
-		
-
-		
-		// This links the user to http://example.com/?file=filename.ext
-		//echo html_array_tree($_SERVER['DOCUMENT_ROOT'], "http://example.com/?file=[link]/");
-
-		// This links the user to http://example.com/?file=filename.ext and only shows image files
-		//$allowed_extensions = array("gif", "jpg", "jpeg", "png");
-		//echo html_array_tree($_SERVER['DOCUMENT_ROOT'], "http://example.com/?file=[link]/", $allowed_extensions);
-		
-		// This displays a JavaScript alert stating which file the user clicked on
       
-      echo $prehtml;
-      echo php_tree_array($Array, '');
+   echo $prehtml;
+   echo php_tree_array($Array, '');
 
 
 
@@ -134,7 +125,7 @@ function php_tree_array($MArray, $return_link, $extensions = array(), $first_cal
 
 				if( is_array($this_value) ) {
 					// Directory
-					$html_array_tree .= "\n<li class=\"pft-array\"><a href=\"#\">" . htmlspecialchars($KeyValue) . "</a>";
+					$html_array_tree .= "\n<li class=\"pft-array\"><span href=\"#\">" . htmlspecialchars($KeyValue) . "</span>";
 					$html_array_tree .= php_tree_array($this_value, $return_link ,$extensions, false);
 					$html_array_tree .= "\n</li>";
 				} else {
@@ -142,7 +133,7 @@ function php_tree_array($MArray, $return_link, $extensions = array(), $first_cal
 					// Get extension (prepend 'ext-' to prevent invalid classes from extensions that begin with numbers)
 					$ext = "ext-mine"; 
 					$link = '#';
-					$html_array_tree .= "\n<li ><a href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</a></li>";
+					$html_array_tree .= "\n<li ><span href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</span></li>";
 				}
 			
 		}
