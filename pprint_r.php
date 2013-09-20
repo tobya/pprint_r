@@ -78,7 +78,7 @@ function pprint_r($Array, $Options = false){
         $(".php-array-tree").find("UL").hide();
 
         // Expand/collapse on click
-        $(".pft-array A").click( function() {
+        $(".pft-array span").click( function() {
           $(this).parent().find("UL:first").slideToggle("medium");
           if( $(this).parent().attr("className") == "pft-array" ) return false;
         });
@@ -124,16 +124,13 @@ function php_tree_array($MArray, $return_link, $extensions = array(), $first_cal
 		foreach( $MArray as $KeyValue => $this_value) {
 
 				if( is_array($this_value) ) {
-					// Directory
-					$html_array_tree .= "\n<li class=\"pft-array\"><span href=\"#\">" . htmlspecialchars($KeyValue) . "</span>";
+					// Array
+          $html_array_tree .= "\n<li class=\"pft-array\"><span href=\"#\">" . htmlspecialchars($KeyValue) . "</span>";
 					$html_array_tree .= php_tree_array($this_value, $return_link ,$extensions, false);
 					$html_array_tree .= "\n</li>";
 				} else {
-					// File
-					// Get extension (prepend 'ext-' to prevent invalid classes from extensions that begin with numbers)
-					$ext = "ext-mine"; 
-					$link = '#';
-					$html_array_tree .= "\n<li ><span href=\"$link\" class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</span></li>";
+					// Key / Value
+					$html_array_tree .= "\n<li ><span  class=\"pft-value\">$KeyValue=" . htmlspecialchars($this_value) . "</span></li>";
 				}
 			
 		}
