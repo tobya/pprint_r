@@ -38,12 +38,12 @@ function pprint_r($Array, $Options = false){
 		background-color: #ABC1DF;
       }
 
-        .php-array-tree A {
+        .php-array-tree span {
           color: #000000;
           text-decoration: none;
         }
 
-        .php-array-tree A:hover {
+        .php-array-tree span:hover {
           color: #666666;
         }
 
@@ -56,7 +56,7 @@ function pprint_r($Array, $Options = false){
         }
         
         .php-array-tree .pft-array {
-          color: #4F15A7;
+          color: #4F15A7; 
           font-weight: bold;
           text-decoration: none; 
 			    cursor: pointer; cursor: hand; //Turn into hand.
