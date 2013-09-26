@@ -19,4 +19,4 @@ If you wish execution to end on print with an message pass a string as the secon
 
     pprint_r($MyArray,'Execution ended by pprint_r');
 
-Demo to come.
+[Demo.](http://tobya.github.io/pprint_r)
