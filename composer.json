@@ -1,0 +1,17 @@
+{
+    "name": "tobya/pprint_r",
+    "type": "library",
+    "description": "Pretty Print_r for PHP",
+    "keywords": ["log","logging","output","prettyprint", "Print_r","echo"],
+    "homepage": "https://github.com/tobya/pprint_r",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toby Allen",
+            "email": "tobyallen@gmail.com",
+            "homepage": "http://tech.cookingisfun.ie",
+        }
+    ]
+    
+    
+}
