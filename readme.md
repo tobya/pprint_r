@@ -20,3 +20,17 @@ If you wish execution to end on print with an message pass a string as the secon
     pprint_r($MyArray,'Execution ended by pprint_r');
 
 [Demo.](http://tobya.github.io/pprint_r)
+
+Pre Print_r
+-------
+
+    preprint_r($Array);
+
+Outputs array with html `<PRE>` in front of it.
+
+unprint_r
+--------
+
+If you have the text of an array provided by print_r you can use `unprint_r` to read it and turn it back into an array.
+
+
