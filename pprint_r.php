@@ -13,18 +13,10 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ****************************************************************/
 
-
-/****************************
- * pprint_r code based on php_file_tree origionally provided by Cory LaViska (http://abeautifulsite.net/) - http://www.abeautifulsite.net/blog/2007/06/php-file-tree/
- * Modified to take any array and render with a little css and jquery to have a tree that can collapse and expand.  Very useful for viewing debugging a very large array.
- */
-
-
-/********************
- * @param $Array
- * @param bool $ShouldExit
- *
- */
+// pprint_r code based on php_file_tree origionally provided by Cory LaViska 
+// (http://abeautifulsite.net/) - http://www.abeautifulsite.net/blog/2007/06/php-file-tree/
+// Modified to take any array and render with a little css and jquery to have a tree that can collapse and expand.  
+// Very useful for viewing debugging a very large array.
 function pprint_r($Array, $Options = false){
 
    $prehtml = '
@@ -113,7 +105,7 @@ switch (getType($Options))
 
 }
 
-/*Function to add a <PRE> tag infront of print_r call.*/
+// Function to add a <PRE> tag infront of print_r call. 
 function prePrint_r($Variable,$return = false) {
   if ($return ){
     return '<PRE>' . print_r($Variable, $return);
@@ -123,6 +115,7 @@ function prePrint_r($Variable,$return = false) {
   }
 }
 
+// Does the work to produce a Tree structure form a multidimensional array.
 function php_tree_array($MArray, $return_link, $extensions = array(), $first_call = true) {
 	// Recursive function called by html_array_tree() to list all subarray values
 	$html_array_tree = '';
