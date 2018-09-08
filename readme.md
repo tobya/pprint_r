@@ -1,6 +1,11 @@
 pprint_r
 --------
 
+Provides 2 useful functions for debug printing out
+- pprint_r which outputs a javascript tree of any array that can explored on page.
+- preprint_r adds a `<PRE>` tag before output so array can be easily seen.
+- Great for debugging just include from github using `https://rawgit.com/tobya/pprint_r/master/pprint_r.php` or copy [this](https://rawgit.com/tobya/pprint_r/master/pprint_r.php)
+
 Pretty print_r
 --------------
 
