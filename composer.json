@@ -1,16 +1,22 @@
 {
-    "name": "tobya/pprint_r",
-    "type": "library",
-    "description": "Pretty Print_r for PHP",
-    "keywords": ["log","logging","output","prettyprint", "Print_r","echo"],
-    "homepage": "https://github.com/tobya/pprint_r",
+    "name": "tobya/pprintr",
+    "description": "Simple <pre> print_r() call",
+    "type": "package",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tobya\\Pprintr\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
     "authors": [
         {
             "name": "Toby Allen",
-            "homepage": "https://github.com/tobya"
+            "email": "toby@cookingisfun.ie"
         }
-    ]
-    
-    
+    ],
+    "require": {}
+
 }
