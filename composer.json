@@ -1,11 +1,11 @@
 {
-    "name": "tobya/pprintr",
+    "name": "tobya/pprint_r",
     "description": "Simple <pre> print_r() call",
     "type": "package",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Tobya\\Pprintr\\": "src/"
+            "Tobya\\PprintR\\": "src/"
         },
         "files": [
             "src/helpers.php"
